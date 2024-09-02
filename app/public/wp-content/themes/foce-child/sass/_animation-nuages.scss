@@ -1,0 +1,30 @@
+#place {
+    background-image: url("./assets/images/bg-image-lieu.png") !important;
+
+    .grand-nuage {
+        width: 316px;
+        height: 122px;
+        position: relative;
+        top: -380px;
+        left: 880px;
+        filter: blur(10px);
+        z-index: 1;
+        animation: floatNuage 2s ease-in-out infinite ;
+    }
+  
+    .petit-nuage {
+        width: 142px;
+        height: 55px;
+        top: -330px;
+        left: 650px;
+        position: relative;
+        filter: blur(12px);
+    }
+}
+
+.story 
+    #place 
+        > div{
+            margin-left: 160px !important; /*pour decaller le titre et paragraphe */
+            margin-top: 100px;  /*pour descendre le titre et paragraphe*/
+}

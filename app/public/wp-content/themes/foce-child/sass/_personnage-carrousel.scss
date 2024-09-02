@@ -1,0 +1,35 @@
+/* Les personnages / Carrousel */
+.story article#characters {
+    max-width: 1440px;
+}
+
+.main-character h3 {
+    max-width: 1440px;
+    text-align: left;
+    background-position: left;
+    padding: 50px 60px;
+   
+  }
+  
+  .swiper {
+    &-container {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin: auto;
+      margin-left: -33.5em !important;
+    }
+    &-slide{
+      background-position: center;
+      background-size: cover;
+      width: 480px !important;
+      height: 480px;
+      margin-right: 40px;
+      margin-left: 40px;
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  

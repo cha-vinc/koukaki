@@ -1,0 +1,84 @@
+ /* Transition fadein section */
+ 
+ .story {
+    overflow: hidden;
+    animation: fadeIn 2s ease-in-out;
+}
+
+    @keyframes fadeIn {
+        0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+        80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+        100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+.studio{
+    animation: fadeIn 2s ease-in-out;
+}
+
+    @keyframes fadeIn {
+        0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+        80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+        100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.nomination-oscars{
+    animation: fadeIn 2s ease-in-out;
+}
+
+    @keyframes fadeIn {
+        0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+        80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+        100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ 
+
+ /* Transition fadein H2 H3 */
+.infade{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+ }
+
+ .infade-transition {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animtitre{
+  display: block;
+  transform: translateY(50px);
+}
+
+.infade-transition.animtitre{
+  transform: translateY(0);
+  transition: 0.6s opacity 0.6s ease-out, 0.6s transform 0.6s ease-out;
+}

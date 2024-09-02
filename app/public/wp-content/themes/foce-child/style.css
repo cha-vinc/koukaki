@@ -1,0 +1,742 @@
+@charset "UTF-8";
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local/
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local/
+ Template: foce
+ Description: Thème enfant à l'occasion de la nomination aux Oscars Shorts !
+ Version: 0.1
+ */
+/*Import Mixin fade-in*/
+/*Import rotation fleurs*/
+.story h2::after {
+  height: 155px;
+  animation: rotate 15s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nomination-oscars::before, .site-footer::before {
+  animation: rotate 15s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.story__article::after, .nomination-oscars::after, .site-footer::after {
+  animation: rotate 15s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#studio h2::before {
+  animation: rotate 15s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#studio h2::after {
+  animation: rotate 15s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*Import transition*/
+/* Transition fadein section */
+.story {
+  overflow: hidden;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.studio {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.nomination-oscars {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Transition fadein H2 H3 */
+.infade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.infade-transition {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animtitre {
+  display: block;
+  transform: translateY(50px);
+}
+
+.infade-transition.animtitre {
+  transform: translateY(0);
+  transition: 0.6s opacity 0.6s ease-out, 0.6s transform 0.6s ease-out;
+}
+
+/*Import animation nuages*/
+#place {
+  background-image: url("./assets/images/bg-image-lieu.png") !important;
+}
+#place .grand-nuage {
+  width: 316px;
+  height: 122px;
+  position: relative;
+  top: -380px;
+  left: 880px;
+  filter: blur(10px);
+  z-index: 1;
+  animation: floatNuage 2s ease-in-out infinite;
+}
+#place .petit-nuage {
+  width: 142px;
+  height: 55px;
+  top: -330px;
+  left: 650px;
+  position: relative;
+  filter: blur(12px);
+}
+
+.story #place > div {
+  margin-left: 160px !important; /*pour decaller le titre et paragraphe */
+  margin-top: 100px; /*pour descendre le titre et paragraphe*/
+}
+
+/*Import animation titre*/
+.infade-transition {
+  opacity: 1;
+  transform: translateY(0);
+}
+.infade-transition.animtitre {
+  transform: translateY(0);
+  transition: 0.6s opacity 0.6s ease-out, 0.6s transform 0.6s ease-out;
+}
+
+/*Import menu burger*/
+/* Menu burger */
+.main-navigation {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  max-width: 1440px;
+}
+.main-navigation ul a:visited {
+  color: black; /*mettre couleur noir et plus en bleu*/
+}
+
+/*Menu barres puis croix*/
+.navbar-burger {
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  margin-top: 30px;
+}
+.navbar-burger span {
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.5s ease-in-out;
+}
+.navbar-burger span::before, .navbar-burger span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  transition: transform 0.5s ease-in-out;
+}
+.navbar-burger span::before {
+  transform: translateY(-10px);
+}
+.navbar-burger span::after {
+  transform: translateY(10px);
+}
+.navbar-burger.active span {
+  background-color: transparent !important;
+}
+.navbar-burger.active span::before {
+  transform: translateY(0px) rotateZ(45deg);
+}
+.navbar-burger.active span::after {
+  transform: translateY(0px) rotateZ(-45deg);
+}
+
+/*Menu burger ouvert*/
+.site-navigation .site-title {
+  position: fixed;
+}
+
+.burger-on {
+  position: fixed;
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  background-color: white;
+  color: black;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in;
+  overflow: hidden;
+  background-color: #FFF5E9;
+  /*Logo*/
+  /* FLEUR */
+  /* CHAT */
+}
+.burger-on.open {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 1s ease-in-out; /*effet fade du menu ouvert comme les sections*/
+}
+.burger-on ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-top: 210px;
+  margin-bottom: 130px;
+  height: calc(100vh - 438px);
+  animation: fadeIn 6s ease-in-out; /*Animation titre quand on ouvre le burger */
+}
+.burger-on li {
+  font-weight: normal;
+  font-size: 64px;
+  list-style: none;
+  margin: 0;
+}
+.burger-on img {
+  margin: auto;
+  display: flex;
+}
+.burger-on a {
+  text-decoration: none;
+}
+.burger-on a:visited {
+  color: black;
+}
+.burger-on a:hover {
+  color: black;
+  text-shadow: 6px 6px 14px rgba(255, 94, 0, 0.5098039216);
+}
+.burger-on p {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 70px;
+}
+.burger-on__logo {
+  width: 154px;
+  height: 95px;
+  top: 124px;
+  left: 643px;
+}
+.burger-on__orchid {
+  width: 172.57px;
+  height: 168.24px;
+  top: 120px;
+  left: -59px;
+}
+.burger-on__flowers {
+  width: 71px;
+  height: 71px;
+  top: 450px;
+  left: 213px;
+}
+.burger-on__sunflower {
+  width: 216px;
+  height: 216px;
+  top: 120px;
+  left: 1039px;
+}
+.burger-on__purpleflower {
+  width: 76px;
+  height: 75px;
+  top: 360px;
+  left: 1396px;
+}
+.burger-on__orangeflower {
+  width: 400px;
+  height: 370px;
+  top: 550px;
+  left: 1265px;
+}
+.burger-on__cat-purple {
+  width: 109.22px;
+  height: 98.63px;
+  top: 240px;
+  left: 267px;
+}
+.burger-on__cat-orange {
+  width: 105.91px;
+  height: 95.65px;
+  top: 600px;
+  left: 79px;
+}
+.burger-on__cat-black {
+  width: 154.74px;
+  height: 147.57px;
+  top: 380px;
+  left: 1076px;
+}
+
+.position {
+  position: absolute;
+}
+
+.rotation {
+  animation: rotate 15s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.flottement {
+  animation: floatLogo 2s ease-in-out infinite;
+}
+
+/*Import mise en page*/
+body {
+  height: auto !important;
+}
+
+main {
+  overflow: hidden;
+}
+
+/* Repositionnement de la tige et fleur qui avait bougé */
+.story h2::before {
+  left: -450px !important;
+}
+
+.story h2::after {
+  left: -410px !important;
+}
+
+/*Banner*/
+.banner img {
+  margin-top: inherit;
+  width: inherit;
+}
+
+.banner {
+  position: relative;
+}
+
+#logo-parallax {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+
+.logo-koukaki {
+  position: relative;
+  animation: floatLogo 2s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-15px, 11px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  75% {
+    transform: translate(15px, 10px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+/*Effacement des fleurs dans le footer*/
+.site-footer::before, .site-footer::after {
+  content: none;
+}
+
+/*Import nomination oscars*/
+.nomination-oscars {
+  position: relative;
+  margin-top: 120px;
+  margin-left: 175px;
+}
+.nomination-oscars::before {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  left: -105px;
+  top: -135px;
+}
+.nomination-oscars::after {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  right: -70px;
+  top: -130px;
+  z-index: -1;
+}
+.nomination-oscars__section {
+  display: flex;
+}
+.nomination-oscars__p {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 1.8em 1.6em;
+  line-height: 45px;
+  text-align: left;
+  background-image: url("./assets/images/orange-bg.png");
+}
+.nomination-oscars img {
+  margin-top: 50px;
+  width: 278px;
+  height: 130px;
+  margin-right: 220px;
+}
+
+/*Import personnage caroussel*/
+/* Les personnages / Carrousel */
+.story article#characters {
+  max-width: 1440px;
+}
+
+.main-character h3 {
+  max-width: 1440px;
+  text-align: left;
+  background-position: left;
+  padding: 50px 60px;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
+  margin-left: -33.5em !important;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 480px !important;
+  height: 480px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+.swiper img {
+  display: block;
+  width: 100%;
+}
+
+/*Import responsive*/
+@media screen and (max-width: 1370px) {
+  .story h2::before {
+    content: none;
+  }
+  .story h2::after {
+    content: none;
+  }
+  .story__article::before {
+    content: none;
+  }
+  .story__article::after {
+    content: none;
+  }
+}
+@media screen and (max-width: 1296px) {
+  .nomination-oscars__p {
+    font-size: 30px;
+    padding: 1.8em 2em;
+    line-height: 40px;
+  }
+  .nomination-oscars img {
+    margin-top: 35px;
+    margin-right: 100px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1044px) {
+  .video {
+    width: 100%;
+  }
+  .banner {
+    min-height: 400px;
+  }
+  .banner .logo {
+    width: 300px;
+  }
+  #studio h2::before {
+    content: none;
+  }
+  #studio h2::after {
+    content: none;
+  }
+  .nomination-oscars::before {
+    content: none;
+  }
+  .nomination-oscars::after {
+    content: none;
+  }
+  .nomination-oscars__p {
+    font-size: 20px;
+    padding: 1.8em 3em;
+    line-height: 35px;
+  }
+  .nomination-oscars img {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+  .burger-on li {
+    font-size: 40px;
+  }
+  .burger-on__logo {
+    left: 400px;
+  }
+  .burger-on__orchid {
+    top: 100px;
+    width: 150px;
+    height: 150px;
+  }
+  .burger-on__cat-purple {
+    left: 150px;
+    top: 200px;
+  }
+  .burger-on__flowers {
+    left: 160px;
+    top: 430px;
+  }
+  .burger-on__cat-orange {
+    top: 550px;
+  }
+  .burger-on__sunflower {
+    width: 100px;
+    height: 100px;
+    left: 680px;
+  }
+  .burger-on__cat-black {
+    width: 109.22px;
+    height: 98.63px;
+    left: 720px;
+  }
+  .burger-on__purpleflower {
+    left: 990px;
+  }
+  .burger-on__orangeflower {
+    width: 220px;
+    height: 190px;
+    left: 900px;
+    top: 600px;
+  }
+  .swiper-container {
+    margin-left: 0.5em !important;
+    margin-bottom: -200px;
+  }
+  h2,
+  h3 {
+    font-size: 40px !important;
+  }
+  .main-character h3 {
+    margin-left: 472px !important;
+  }
+  .nomination-oscars__p {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 30px !important;
+  }
+  .nomination-oscars h2 {
+    width: 50%;
+    margin-top: 35px;
+    margin-left: -120px;
+    margin-right: -170px;
+  }
+  .nomination-oscars img {
+    margin-left: 250px;
+    margin-top: 44px;
+  }
+}
+@media screen and (max-width: 823px) {
+  .main-navigation {
+    width: 100%;
+    height: 50px;
+  }
+  .navbar-burger {
+    width: 35px !important;
+    height: 20px !important;
+    margin-top: 15px !important;
+    margin-left: 170px !important;
+  }
+  .navbar-burger span {
+    height: 2.5px !important;
+  }
+  .navbar-burger span::after, .navbar-burger span::before {
+    height: 2.5px !important;
+  }
+  .burger-on {
+    top: 50px !important;
+    left: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .burger-on ul {
+    margin-top: 50px;
+  }
+  .burger-on li {
+    font-size: 30px !important;
+    line-height: 90px !important;
+  }
+  .burger-on__cat-purple {
+    top: 60px !important;
+    left: 100px !important;
+    width: 91px !important;
+    height: 78px !important;
+  }
+  .burger-on__sunflower {
+    top: 180px !important;
+    left: 500px !important;
+    width: 91px !important;
+    height: 91px !important;
+  }
+  .burger-on__flowers {
+    top: 390px !important;
+    left: 130px !important;
+    width: 70px !important;
+    height: 70px !important;
+  }
+  .burger-on__logo, .burger-on__orchid, .burger-on__purpleflower, .burger-on__orangeflower, .burger-on__cat-black, .burger-on__cat-orange {
+    display: none !important;
+  }
+  #background-video {
+    display: none;
+  }
+  .banner img {
+    display: block;
+  }
+  h2,
+  h3 {
+    font-size: 30px !important;
+  }
+  .banner {
+    min-height: 500px;
+    margin-left: -50px;
+  }
+  .logo-koukaki {
+    top: 0 !important;
+  }
+  .nomination-oscars__section {
+    flex-direction: column;
+  }
+  .nomination-oscars__section h2 {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 25px !important;
+    width: 370px;
+    margin-right: 25px;
+    margin-top: -60px;
+  }
+  .nomination-oscars::before {
+    content: none;
+  }
+  .nomination-oscars::after {
+    content: none;
+  }
+  .main-character h3 {
+    margin-left: 500px !important;
+  }
+  .swiper-container {
+    margin-left: 0.6em !important;
+    margin-bottom: -200px;
+  }
+  .story #place {
+    min-height: 250px;
+  }
+  #place h3 {
+    margin-left: -69px !important;
+  }
+  #place p {
+    margin-left: -90px !important;
+    margin-top: 35px;
+  }
+}/*# sourceMappingURL=style.css.map */

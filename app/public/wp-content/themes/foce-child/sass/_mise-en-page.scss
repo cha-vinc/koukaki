@@ -1,0 +1,76 @@
+body{
+  height: auto !important;
+}
+
+main{
+  overflow: hidden;
+}
+
+/* Repositionnement de la tige et fleur qui avait bougé */
+.story h2{
+      &::before {
+         left: -450px !important;
+   }
+}
+
+.story h2{
+      &::after {
+         left: -410px !important;
+   } 
+}
+
+
+/*Banner*/
+.banner 
+      img {
+         margin-top: inherit;
+         width: inherit;
+   }
+  
+  .banner {
+   position: relative;
+  }
+ 
+  #logo-parallax{
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 70%;
+  }
+ 
+  .logo-koukaki{
+   position: relative;
+   animation: floatLogo 2s ease-in-out infinite;
+  }
+   
+  @keyframes floatLogo {
+   0% {
+     transform: translate(0, 0);
+   }
+   25% {
+     transform: translate(-15px, 11px);
+   }
+   50% {
+     transform: translate(0, 15px);
+   }
+   75% {
+     transform: translate(15px, 10px);
+   }
+   100% {
+     transform: translate(0);
+   } 
+}
+
+ 
+  /*Effacement des fleurs dans le footer*/
+
+.site-footer::before, .site-footer::after {
+   content: none;
+}
+ 
+ 
+
+
+
+
