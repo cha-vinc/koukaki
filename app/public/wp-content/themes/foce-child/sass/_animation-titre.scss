@@ -4,6 +4,23 @@
 
     &.animtitre{
         transform: translateY(0);
-        transition: 0.6s opacity 0.6s ease-out, 0.6s transform 0.6s ease-out;
+        transition: 0.6s opacity 0.6s ease-out,0.6s transform 0.6s ease-out;
+    }  
+    &.koukaki{
+        transition-delay: 0.690s;
     }
+       
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
